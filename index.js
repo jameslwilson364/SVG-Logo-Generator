@@ -17,11 +17,54 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// prompt user for initials  && test for user initials
 
-// prompt user for text color name or hex  && test for color input
+function writeFile() {
+    inquirer
+      .prompt([
+        // prompt user for initials  && test for user initials
+        {
+          type: 'input',
+          message: 'What are the initials for your logo?',
+          name: 'logoInitials',
+        },
+        // prompt user for text color name or hex  && test for color input
+        {
+            type: 'input',
+            message: 'What color would you like your text to be? (note you can enter either the hex code or the actual color name)',
+            name: 'logoTextColor',
+          },
+        // prompt user for shape circle, triangle or square  && test for shape input
+        {
+        type: 'list',
+        message: 'What shape do you want for your logo background?',
+        name: 'logoShape',
+        choices: ['Circle', 'Square', 'Triangle']
+        },
+        // prompt for shape color name or hex  && test for shape color
+        {
+        type: 'input',
+        message: 'What color do you want your shape to be? (note you can enter either the hex code or the actual color name)',
+        name: 'logoShapeColor',
+        },
+      ])
+      .then((response) => {
+        console.log(response.logoInitials);
+        console.log(response.logoTextColor);
+        console.log(response.logoShape);
+        console.log(response.logoShapeColor);
+        
+        // writes to the new file
+        // fs.writeFile('READMEGEN.md', `${userName}`, (err) =>
+        // err ? console.error(err) : console.log('README logged!')
+        // );
+       });
+    }
+    writeFile();
+    
 
-// prompt user for shape circle, triangle or square  && test for shape input
+
+
+
 
 // prompt for shape color name or hex  && test for shape color
 
