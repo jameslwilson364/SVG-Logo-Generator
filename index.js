@@ -4,6 +4,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const shapes = require('./lib/shapes.js');
 
+
 // function that will call to the shape.js and ultimately write the file
 function writeFile() {
     inquirer
@@ -37,6 +38,7 @@ function writeFile() {
       .then((response) => {
         const userResponse = response;
         module.exports = userResponse;
+        console.log(userResponse);
         shapes.userOutput();
     });
 }
