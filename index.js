@@ -38,7 +38,7 @@ function writeFile() {
       .then((response) => {
         const userResponse = response;
         module.exports = userResponse;
-        console.log(userResponse);
+        // console.log(userResponse);
         shapes.userOutput();
     });
 }
@@ -49,8 +49,4 @@ function writeFile() {
 
 
 
-// prompt for shape color name or hex  && test for shape color
 
-// gen svg file need loop for shape and then varialbes for options
-
-// file name should be logo.svg and will open in a browser  match criteria, selections and 300x200 rqmt
